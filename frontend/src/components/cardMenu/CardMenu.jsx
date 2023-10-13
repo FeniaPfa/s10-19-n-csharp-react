@@ -25,18 +25,15 @@ const CardMenu = ({ object }) => {
   const handleNavigate = (e) => {
     e.preventDefault()
     e.stopPropagation()
-    // console.log(e)
 
     navigate(`/detalle/${object.id}`)
   }
 
-  console.log('PRECIO ->', object?.price)
+  // console.log('PRECIO ->', object?.price)
 
   const handleCarClick = (e) => {
     e.stopPropagation()
-    // console.log('add car')
     setAddToCar((prevValue) => !prevValue) // Cambia el valor actual
-    // console.log(addToCar)
 
     if (!addToCar === true) {
       dispatch(addItemToCar({ meal_id: object?.id, quantity: 1, price: object?.price }))
@@ -50,7 +47,6 @@ const CardMenu = ({ object }) => {
 
   const handleFavoriteClick = (e) => {
     e.stopPropagation()
-    // console.log('add favourite')
     if (!activaHeart === true) {
       dispatch(addProductLike(object))
       setActivaHeart(true)
@@ -62,16 +58,13 @@ const CardMenu = ({ object }) => {
 
   const handleSettingsClick = (e) => {
     e.stopPropagation()
-    // console.log('add settings')
   }
 
   const handleMoueEnter = () => {
-    // console.log('DENTRO de mouse enter')
     setIshover(true)
   }
 
   const handleMoueLeave = () => {
-    // console.log('FUERA de mouse leave')
     setIshover(false)
   }
 
@@ -81,7 +74,7 @@ const CardMenu = ({ object }) => {
       className='cardCustomer whiteCustom cursor-pointer w-[250px] h-[300px] rounded-md overflow-hidden z-0' style={{ boxShadow: '4px 4px 3px #c4c4c4,-3px -3px 3px #efffe8' }}
     >
       <figure className={`customContent relative w-[100%] h-3/4 overflow-hidden box-border rounded-[4px] ${ishover ? '' : 'hovered'}`} onClick={handleNavigate}>
-        <span className='absolute bottom-1 left-1 font-parrafo font-[400] text-marronCustom text-xs bg-white bg-opacity-40 shadow-md backdrop-blur-sm backdrop-filter border rounded-[4px] py-1 px-2'>Restaurant #{object?.restaurant_id}</span>
+        <span className='absolute bottom-1 left-1 font-parrafo font-[400] text-marronCustom text-xs bg-white bg-opacity-40 shadow-md backdrop-blur-sm backdrop-filter border rounded-[4px] py-1 px-2'>{object?.Restaurant.name}</span>
         <img className='w-[100%] h-[100%] object-cover p-0' src={`${object?.image}`} alt={`${object?.name}`} />
 
         {/* botonera  carrito y favoritos */}
