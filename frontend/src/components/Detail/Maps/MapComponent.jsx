@@ -3,19 +3,22 @@ import { MapContainer, TileLayer, Marker, Popup, CircleMarker } from 'react-leaf
 import 'leaflet/dist/leaflet.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { getCoordenadasRestaurant, resetCordenadasRestaurant } from '../../../features/map/mapSlice'
+import { useRestaurantById } from '../../../hooks/useRestaurantById'
 
-const MapComponent = () => {
+const MapComponent = ({ restaurant }) => {
   const dispatch = useDispatch()
   const cordenada = useSelector((state) => state?.map?.cordenadasRestaurant)
-  const restaurant = useSelector((state) => state.restaurants?.restaurantById)
-
+  // const restaurant = useSelector((state) => state.restaurants?.restaurantById)
+  // const restaurant = useRestaurantById(restaurantId)
+  console.log(cordenada)
   const redOptions = { color: 'red' }
-  const direcion = restaurant?.address
 
   useEffect(() => {
-    dispatch(resetCordenadasRestaurant())
-    dispatch(getCoordenadasRestaurant(direcion))
-  }, [direcion, dispatch])
+    if (restaurant) {
+      dispatch(resetCordenadasRestaurant())
+      dispatch(getCoordenadasRestaurant(restaurant.address))
+    }
+  }, [])
 
   return (
     <>

@@ -31,7 +31,7 @@ const ListAtributes = () => {
                 <IoCloseSharp style={{ color: 'red', fontSize: '1.2rem' }} />
                 )
           }
-          Gluten
+          GlutenFree
         </li>
         <li className='itemListAtr flex justify-start items-center gap-1 text-marronCustom font-normal text-base'>
           {
@@ -43,7 +43,7 @@ const ListAtributes = () => {
                 <IoCloseSharp style={{ color: 'red', fontSize: '1.2rem' }} />
                 )
           }
-          Proteinas
+          Protein+
         </li>
       </ul>
     </div>

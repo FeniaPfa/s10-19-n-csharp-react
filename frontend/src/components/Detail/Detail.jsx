@@ -6,15 +6,14 @@ import { getFoodsById } from '../../features/foods/foodsSlice'
 import CardRestaurantName from './CardRestaurantName'
 import ListAtributes from './ListAtributes'
 import MapComponent from './Maps/MapComponent'
+import { useMealById } from '../../hooks/useMealById'
+import { RestaurantInfo } from './RestaurantInfo'
 
 const Detail = () => {
-  const dispatch = useDispatch()
-  const product = useSelector((state) => state.foods?.productByid)
+  // const dispatch = useDispatch()
+  // const data = useSelector((state) => state.foods?.dataByid)
   const { id } = useParams()
-
-  useEffect(() => {
-    dispatch(getFoodsById(id))
-  }, [id, dispatch])
+  const { data, isLoading } = useMealById(id)
 
   return (
     <section className='w-[100%] h-auto flex flex-col justify-center items-center'>
@@ -24,7 +23,7 @@ const Detail = () => {
 
         {/* contain left  */}
         <section className='containImage w-[100%] lg:w-1/2 h-[300px] lg:h-auto lg:aspect-square flex flex-col justify-center items-center lg:justify-end lg:pl-3 gap-4'>
-          <img className='w-[100%] max-w-[620px] h-[100%] max-h-[620px] object-cover p-0 rounded-md' src={`${product?.image}`} alt={`${product?.name}`} />
+          <img className='w-[100%] max-w-[620px] h-[100%] max-h-[620px] object-cover p-0 rounded-md' src={`${data?.image}`} alt={`${data?.name}`} />
         </section>
 
         {/* contain right */}
@@ -34,19 +33,12 @@ const Detail = () => {
           <section className='w-[100%] max-w-[620px] h-[100%] flex flex-col justify-start items-start gap-4'>
             {/* componente lista de atributos */}
             <ListAtributes />
-            <p className='descriptionFood font-normal text-base text-marronCustom '>{product?.description}</p>
-            <PriceFoods />
+            <p className='descriptionFood font-normal text-base text-marronCustom '>{data?.description}</p>
+            <PriceFoods product={data} />
           </section>
 
-          {/* nombre de restaurante  */}
-          <section className='w-[100%] h-auto overflow-hidden flex justify-center lg:justify-start items-center'>
-            <CardRestaurantName idRestaurant={product.restaurant_id} />
-          </section>
+          {!isLoading && <RestaurantInfo restaurantId={data?.restaurant_id} />}
 
-          {/* mapa  */}
-          <section className='relative containerMpas w-[100%] h-[300px] bg-greenCustom flex justify-center items-center rounded-md p-2 z-0'>
-            <MapComponent />
-          </section>
         </section>
       </section>
 

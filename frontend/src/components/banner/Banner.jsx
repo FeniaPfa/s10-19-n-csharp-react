@@ -33,7 +33,7 @@ const Banner = () => {
                 // onSlideChange={() => console.log('slide change')}
         className='mySwiper w-screen h-[100%]'
       >
-        <SwiperSlide className=' bg-greenCustom'>
+        <SwiperSlide className=' bg-primary'>
           <div className='absolute top-0 left-0 w-[100%] h-[100%] flex flex-col-reverse lg:flex-row lg:items-center text-whiteCustom'>
             <section className='w-full h-1/2 lg:w-1/2 lg:h-[100%] flex flex-col justify-center items-start p-[1.5rem] lg:p-[4rem] gap-3 sm:gap-5 lg:gap-6'>
               <h1 className='font-titulo font-bold text-3xl lg:text-5xl'>
