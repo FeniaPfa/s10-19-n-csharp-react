@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { addProductLike } from '../../features/productLike/productLikeSlice'
 import { addItemToCar, removeItemFromCar } from '../../features/counter/carSlice'
 import { loadAddToCarFromLocalStorage } from './loadAddToCarFromLocalStorage'
+import { formatPrice } from '../../utils/formatPrice'
 
 const CardMenu = ({ object }) => {
   const dispatch = useDispatch()
@@ -105,7 +106,7 @@ const CardMenu = ({ object }) => {
       <section className='px-4 flex flex-col gap-1 py-2'>
 
         <span className='text-md font-medium text-black'>{object?.name}</span>
-        <span className='text-lg font-medium text-primary'>$ {object?.price}</span>
+        <span className='text-lg font-medium text-primary'>$ {formatPrice(object?.price)}</span>
 
       </section>
     </div>

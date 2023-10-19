@@ -73,7 +73,7 @@ const NavUtils = () => {
           <CardUserLogin />
           )
         : (
-          <a
+          <div
             onClick={handleactiveMenu}
             className='relative w-[170px] h-[40px] p-3 rounded-md flex flex-row flex-nowrap justify-start items-center content-center gap-2 text-[1.2rem] font-normal lg:w-[40px] lg:rounded-md bg-greenCustom lg:grid lg:place-content-center lg:text-[1.2rem] cursor-pointer text-white'
           >
@@ -92,12 +92,12 @@ const NavUtils = () => {
                 onClick={() => { navigate('/register') }}
                 className='w-[100%] flex flex-row flex-nowrap justify-start items-center content-center gap-1 text-sm capitalize font-parrafo font-normal p-1 rounded-md hover:bg-lightBrownCustom transition-all duration-150 ease-in'
               >
-                <IoAddSharp className='text-lg text-greenCustom2' />
+                <IoAddSharp className='text-lg text-primary' />
                 Registrar
               </a>
 
             </section>
-          </a>
+          </div>
 
           )
       }

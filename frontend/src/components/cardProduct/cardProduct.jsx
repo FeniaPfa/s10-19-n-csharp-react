@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom'
+import { formatPrice } from '../../utils/formatPrice'
 
 function CardProduct ({ data }) {
   const navigate = useNavigate()
@@ -16,7 +17,7 @@ function CardProduct ({ data }) {
       </figure>
       <p className='flex justify-between m-2'>
         <span className='text-sm font-light text-black'>{data.name}</span>
-        <span className='text-lg font-medium text-primary'>$ {data.price}</span>
+        <span className='text-lg font-medium text-primary'>$ {formatPrice(data.price)}</span>
       </p>
     </div>
   )
