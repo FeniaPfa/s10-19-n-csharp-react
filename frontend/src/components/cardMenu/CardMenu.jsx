@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { addProductLike } from '../../features/productLike/productLikeSlice'
 import { addItemToCar, removeItemFromCar } from '../../features/counter/carSlice'
 import { loadAddToCarFromLocalStorage } from './loadAddToCarFromLocalStorage'
+import { formatPrice } from '../../utils/formatPrice'
 
 const CardMenu = ({ object }) => {
   const dispatch = useDispatch()
@@ -74,20 +75,22 @@ const CardMenu = ({ object }) => {
       className='cardCustomer whiteCustom cursor-pointer w-[250px] h-[300px] rounded-md overflow-hidden z-0' style={{ boxShadow: '4px 4px 3px #c4c4c4,-3px -3px 3px #efffe8' }}
     >
       <figure className={`customContent relative w-[100%] h-3/4 overflow-hidden box-border rounded-[4px] ${ishover ? '' : 'hovered'}`} onClick={handleNavigate}>
-        <span className='absolute bottom-1 left-1 font-parrafo font-[400] text-marronCustom text-xs bg-white bg-opacity-40 shadow-md backdrop-blur-sm backdrop-filter border rounded-[4px] py-1 px-2'>{object?.Restaurant?.name}</span>
+
+        <span className='absolute bottom-2 left-2 font-parrafo font-[400] text-black text-xs bg-white bg-opacity-70 shadow-md backdrop-blur-sm backdrop-filter border rounded-[4px] py-1 px-2'>{object?.Restaurant?.name}</span>
+
         <img className='w-[100%] h-[100%] object-cover p-0' src={`${object?.image}`} alt={`${object?.name}`} />
 
         {/* botonera  carrito y favoritos */}
         <section className={`ContentButtonCardMenu absolute w-9 h-auto flex flex-col justify-center items-center content-center gap-2 z-10 botoneraCard transition-all duration-100 ease-in-out ${ishover ? 'visible top-2 right-1 opacity-1' : 'invicible top-2 -right-10 opacity-0'}`}>
           <button
             onClick={handleCarClick}
-            className={`buttonCardMenu  flex w-8 h-8 text-[1.4rem] text-green-500 justify-center items-center rounded-md transition-all duration-150 ease-linear ${addToCar || productConLike ? 'text-white bg-green-500' : 'text-green-500 bg-white'}`}
+            className={`buttonCardMenu  flex w-8 h-8 text-[1.4rem] text-primary justify-center items-center rounded-md transition-all duration-150 ease-linear ${addToCar || productConLike ? 'text-white bg-primary' : 'text-primary bg-white'}`}
           >
             <IoCartOutline />
           </button>
           <button
             onClick={handleFavoriteClick}
-            className={`buttonCardMenu flex w-8 h-8 text-[1.4rem]  justify-center items-center rounded-md transition-all duration-150 ease-linear ${activaHeart || productConHeart ? 'text-white bg-green-500 opacity-1' : 'text-green-500 bg-white'}`}
+            className={`buttonCardMenu flex w-8 h-8 text-[1.4rem]  justify-center items-center rounded-md transition-all duration-150 ease-linear ${activaHeart || productConHeart ? 'text-white bg-primary opacity-1' : 'text-primary bg-white'}`}
           >
             <IoHeartOutline />
           </button>
@@ -95,18 +98,18 @@ const CardMenu = ({ object }) => {
             role === 2 &&
               <button
                 onClick={handleSettingsClick}
-                className='buttonCardMenu flex w-8 h-8 text-[1.4rem] text-green-500 justify-center items-center  rounded-md transition-all duration-150 ease-linear'
+                className='buttonCardMenu flex w-8 h-8 text-[1.4rem] text-primary justify-center items-center  rounded-md transition-all duration-150 ease-linear'
               >
                 <IoSettingsOutline />
               </button>
           }
         </section>
       </figure>
-      <section className=' w-[100%] h-1/4 py-2 px-2'>
-        <p className='flex flex-col justify-start items-start  gap-2'>
-          <span className='text-sm font-light text-black'>{object?.name}</span>
-          <span className='text-lg font-medium text-green-500'>${object?.price}</span>
-        </p>
+      <section className='px-4 flex flex-col gap-1 py-2'>
+
+        <span className='text-md font-medium text-black'>{object?.name}</span>
+        <span className='text-lg font-medium text-primary'>$ {formatPrice(object?.price)}</span>
+
       </section>
     </div>
   )

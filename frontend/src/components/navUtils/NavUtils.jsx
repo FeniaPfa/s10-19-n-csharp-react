@@ -36,14 +36,14 @@ const NavUtils = () => {
   return (
     <section className='utils
     w-[170px] flex flex-col justify-center items-center
-    lg:w-auto lg:flex lg:flex-row lg:flex-nowrap lg:justify-start lg:items-center lg:content-center  gap-4'
+    lg:w-auto lg:flex lg:flex-row lg:flex-nowrap lg:justify-start lg:items-center lg:content-center gap-4'
     >
       <SearchButton />
       {
       cantCarProduct > 0 && (
         <a
           onClick={handleNavigateCar}
-          className='relative w-[170px] h-[40px] p-3 rounded-md flex flex-row flex-nowrap justify-start items-center content-center gap-2 text-[1.2rem] font-normal lg:w-[40px] lg:rounded-md bg-greenCustom lg:grid lg:place-content-center lg:text-[1.2rem] cursor-pointer text-whiteCustom'
+          className='relative w-[170px] h-[40px] p-3 rounded-md flex flex-row flex-nowrap justify-start items-center content-center gap-2 text-[1.2rem] font-normal lg:w-[40px] lg:rounded-md bg-greenCustom lg:grid lg:place-content-center lg:text-[1.2rem] cursor-pointer text-white'
         >
           <IoCartSharp className='text-[1.6rem]' />
           <span className='font-titulo font-normal  text-[1.1rem] lg:hidden capitalize'>Carrito</span>
@@ -57,7 +57,7 @@ const NavUtils = () => {
       likeProducts.length > 0 && (
         <a
           onClick={handleNavigateLikes}
-          className='relative w-[170px] h-[40px] p-3 rounded-md flex flex-row flex-nowrap justify-start items-center content-center gap-2 text-[1.2rem] font-normal lg:w-[40px] lg:rounded-md bg-greenCustom lg:grid lg:place-content-center lg:text-[1.2rem] cursor-pointer text-whiteCustom'
+          className='relative w-[170px] h-[40px] p-3 rounded-md flex flex-row flex-nowrap justify-start items-center content-center gap-2 text-[1.2rem] font-normal lg:w-[40px] lg:rounded-md bg-primary lg:grid lg:place-content-center lg:text-[1.2rem] cursor-pointer text-white'
         >
           <IoHeartSharp className='text-[1.6rem]' />
           <span className='font-titulo font-normal  text-[1.1rem] lg:hidden capitalize'>Me gustan</span>
@@ -73,31 +73,31 @@ const NavUtils = () => {
           <CardUserLogin />
           )
         : (
-          <a
+          <div
             onClick={handleactiveMenu}
-            className='relative w-[170px] h-[40px] p-3 rounded-md flex flex-row flex-nowrap justify-start items-center content-center gap-2 text-[1.2rem] font-normal lg:w-[40px] lg:rounded-md bg-greenCustom lg:grid lg:place-content-center lg:text-[1.2rem] cursor-pointer text-whiteCustom'
+            className='relative w-[170px] h-[40px] p-3 rounded-md flex flex-row flex-nowrap justify-start items-center content-center gap-2 text-[1.2rem] font-normal lg:w-[40px] lg:rounded-md bg-greenCustom lg:grid lg:place-content-center lg:text-[1.2rem] cursor-pointer text-white'
           >
             <IoPersonCircleOutline className='text-[1.6rem]' />
             <span className='font-titulo font-normal  text-[1.1rem] lg:hidden capitalize'>Perfil</span>
 
-            <section className={`subMenuLogin absolute rounded-md w-[100%] lg:w-[150px] lg:h-[150px] bg-marronCustom text-whiteCustom flex flex-col gap-2 justify-center items-start p-1 transition-all duration-150 ease-linear ${activeloginMenu ? ' right-0 top-[46px] lg:top-[75px] lg:right-[-19px] opacity-1 z-10' : 'top-0 right-0 lg:right-[-20px] opacity-0 -z-10'}`}>
+            <section className={`subMenuLogin absolute rounded-md w-[100%] lg:w-[150px] lg:h-[150px] bg-marronCustom text-white flex flex-col gap-2 justify-center items-start p-1 transition-all duration-150 ease-linear ${activeloginMenu ? ' right-0 top-[46px] lg:top-[75px] lg:right-[-19px] opacity-1 z-10' : 'top-0 right-0 lg:right-[-20px] opacity-0 -z-10'}`}>
               <a
                 onClick={() => { navigate('/login') }}
                 className='w-[100%] flex flex-row flex-nowrap justify-start items-center content-center gap-1 text-sm capitalize font-parrafo font-normal p-1 rounded-md hover:bg-lightBrownCustom transition-all duration-150 ease-in'
               >
-                <IoLogInOutline className='text-lg text-greenCustom2' />
+                <IoLogInOutline className='text-lg text-primary' />
                 Ingresar
               </a>
               <a
                 onClick={() => { navigate('/register') }}
                 className='w-[100%] flex flex-row flex-nowrap justify-start items-center content-center gap-1 text-sm capitalize font-parrafo font-normal p-1 rounded-md hover:bg-lightBrownCustom transition-all duration-150 ease-in'
               >
-                <IoAddSharp className='text-lg text-greenCustom2' />
+                <IoAddSharp className='text-lg text-primary' />
                 Registrar
               </a>
 
             </section>
-          </a>
+          </div>
 
           )
       }

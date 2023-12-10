@@ -5,11 +5,11 @@ export const getCoordenadasRestaurant = createAsyncThunk(
   'map/getCoordenadasRestaurant', async (direccion, thunkAPI) => {
     try {
       const encodedDireccion = encodeURIComponent(direccion)
-      const url = `https://nominatim.openstreetmap.org/search?q=${encodedDireccion}&format=json`
+      const url = `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(direccion)}`
 
       const response = await fetch(url)
       const data = await response.json()
-
+      console.log(data)
       // verificamos que trae
       // console.log('data ubicacion -->', data)
 
