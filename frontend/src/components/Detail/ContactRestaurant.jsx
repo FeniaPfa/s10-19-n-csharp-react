@@ -6,7 +6,7 @@ import { BiSolidTimeFive } from 'react-icons/bi'
 const ContactRestaurant = ({ restaurant }) => {
   const handlePhoneClick = (e) => {
     e.preventDefault()
-    const message = encodeURIComponent('Hola, estoy interesad@ en su sericio. Me gustaría que me contacten. ¡Gracias!')
+    const message = encodeURIComponent('Hola, estoy interesad@ en su servicio. Me gustaría que me contacten. ¡Gracias!')
     window.open(`https://wa.me/${restaurant?.phone_number}?text=${message}`, '_blank')
   }
 
@@ -16,24 +16,24 @@ const ContactRestaurant = ({ restaurant }) => {
   }
 
   return (
-    <ul className='w-[100%] h-auto flex flex-col gap-2'>
-      <li className='w-[100%] flex flex-row justify-start items-center'>
+    <ul className='w-full h-auto flex flex-col gap-2'>
+      <li className='w-full flex flex-row justify-start items-center'>
         <button
           onClick={handleLocationClick}
           className='flex items-center gap-x-1 font-parrafo text-xs font-light text-marronCustom text-left'
         >
-          <span className='text-greenCustom2 text-lg'>
+          <span className='text-primary text-lg'>
             <IoLocationSharp />
           </span>
           {restaurant?.address}
         </button>
       </li>
-      <li className='w-[100%] flex flex-row justify-start items-center'>
+      <li className='w-full flex flex-row justify-start items-center'>
         <button
           onClick={handlePhoneClick}
           className='flex items-center gap-x-1 font-parrafo text-xs font-light text-marronCustom text-left'
         >
-          <span className='text-greenCustom2 text-lg'>
+          <span className='text-primary text-lg'>
             <BsTelephoneFill />
           </span>{restaurant?.phone_number}
         </button>

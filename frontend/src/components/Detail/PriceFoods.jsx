@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { addItemToCar } from '../../features/counter/carSlice'
+import { formatPrice } from '../../utils/formatPrice'
 
 const PriceFoods = ({ product }) => {
   // const product = useSelector((state) => state.foods?.productByid)
@@ -59,7 +60,7 @@ const PriceFoods = ({ product }) => {
         </section>
 
         <section className='containPriceProduct flex flex-col justify-center items-start  gap-1'>
-          <h2 className='text-xl font-parrafo font-bold text-primary '>${product?.price * quantity}</h2>
+          <h2 className='text-xl font-parrafo font-bold text-primary '>$ {formatPrice(product?.price * quantity)}</h2>
           <p className='font-titulo font-normal text-sm text-marronCustom '>+12% IVA</p>
         </section>
 

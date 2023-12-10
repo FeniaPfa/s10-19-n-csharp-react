@@ -13,7 +13,7 @@ export const RestaurantInfo = ({ restaurantId }) => {
       </section>
 
       {/* mapa  */}
-      <section className='relative containerMpas w-[100%] h-[300px] bg-greenCustom flex justify-center items-center rounded-md p-2 z-0'>
+      <section className='relative containerMpas w-[100%] h-[300px] bg-primary flex justify-center items-center rounded-md p-2 z-0'>
         <MapComponent restaurant={data} />
       </section>
     </>

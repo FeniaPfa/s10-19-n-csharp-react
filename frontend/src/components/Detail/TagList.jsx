@@ -2,7 +2,7 @@ import React from 'react'
 import { IoCheckmarkSharp, IoCloseSharp } from 'react-icons/io5'
 import { useSelector } from 'react-redux'
 
-const ListAtributes = () => {
+export const TagList = () => {
   const product = useSelector((state) => state.foods?.productByid)
 
   return (
@@ -49,5 +49,3 @@ const ListAtributes = () => {
     </div>
   )
 }
-
-export default ListAtributes

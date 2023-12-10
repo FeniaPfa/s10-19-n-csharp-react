@@ -1,17 +1,10 @@
-import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import PriceFoods from './PriceFoods'
-import { useDispatch, useSelector } from 'react-redux'
-import { getFoodsById } from '../../features/foods/foodsSlice'
-import CardRestaurantName from './CardRestaurantName'
-import ListAtributes from './ListAtributes'
-import MapComponent from './Maps/MapComponent'
+import { TagList } from './TagList'
 import { useMealById } from '../../hooks/useMealById'
 import { RestaurantInfo } from './RestaurantInfo'
 
 const Detail = () => {
-  // const dispatch = useDispatch()
-  // const data = useSelector((state) => state.foods?.dataByid)
   const { id } = useParams()
   const { data, isLoading } = useMealById(id)
 
@@ -27,13 +20,13 @@ const Detail = () => {
         </section>
 
         {/* contain right */}
-        <section className='containInfo w-[100%] lg:w-1/2 h-[100%] bg-white flex flex-col justify-center items-center lg:justify-start lg:items-start gap-6 px-2 lg:px-0 lg:pr-3'>
+        <section className='containInfo w-[100%] lg:w-1/2 h-[100%] flex flex-col justify-center items-center lg:justify-start lg:items-start gap-6 px-2 lg:px-0 lg:pr-3'>
 
           {/* Descripcion del plato */}
           <section className='w-[100%] max-w-[620px] h-[100%] flex flex-col justify-start items-start gap-4'>
             {/* componente lista de atributos */}
-            <ListAtributes />
-            <p className='descriptionFood font-normal text-base text-marronCustom '>{data?.description}</p>
+            <TagList />
+            <p className='descriptionFood font-normal text-base text-marronCustom'>{data?.description}</p>
             <PriceFoods product={data} />
           </section>
 
