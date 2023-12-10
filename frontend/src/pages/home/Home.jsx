@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 import { setActiveIndex } from '../../features/nav/navSlice'
 import SeeCategories from '../../components/SeeCategories/SeeCategories'
 
-import ProductDay from '../../components/Sections/ProductDay'
+// import ProductDay from '../../components/Sections/ProductDay'
 import { CardSlider } from '../../components/CardSlider/CardSlider'
 import Banner from '../../components/banner/Banner'
 
@@ -27,7 +27,7 @@ const Home = () => {
       <Banner />
       <Features />
       <SeeCategories />
-      <ProductDay />
+      {/* <ProductDay /> */}
       <CardSlider />
     </div>
   )
