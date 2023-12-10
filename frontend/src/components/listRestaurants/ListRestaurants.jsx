@@ -15,7 +15,7 @@ const ListRestaurants = () => {
   console.log(listOfRestaurant)
   return (
     <section
-      className='min-h-[500px] w-[100%] flex flex-wrap justify-center items-center gap-4 text-blackCustom font-parrafo text-[2rem] py-[1rem] max-w-[1500px]'
+      className='w-full flex flex-wrap items-center gap-4 text-blackCustom py-4 justify-center'
     >
       {
         fixedList.map((restaurant) => {

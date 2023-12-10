@@ -10,7 +10,7 @@ const Footer = () => {
   return (
     <footer className='bg-white text-white'>
 
-      <div className='bg-gradient-to-t from-greenCustom to-greenCustom2'>
+      <div className='bg-gradient-to-t from-primary to-greenCustom2'>
         <div className='max-w-7xl py-20 px-5 grid grid-cols-2 md:grid-cols-3 grid-rows-2 md:grid-rows-1 gap-x-10 lg:gap-x-16 gap-y-20 mx-auto'>
 
           <div>
@@ -43,9 +43,9 @@ const Footer = () => {
           <div className='col-start-1 col-end-3 md:col-start-3 md:col-end-4'>
             <p className='text-2xl font-bold mb-2'>Suscríbete para recibir novedades</p>
             <p className='mb-5'>Ingresa tu Email para recibir ofertas, novedades en tu correo</p>
-            <div className="relative">
+            <div className='relative'>
               <input type='text' placeholder='Ingresa tu Email' className='w-full bg-white p-2 rounded-md' />
-              <button className="absolute inset-y-0 right-0 bg-white text-greenCustom px-4 py-0 mr-1 border-l">Enviar</button>
+              <button className='absolute inset-y-0 right-0 bg-white text-primary px-4 py-0 mr-1 border-l'>Enviar</button>
             </div>
           </div>
 
@@ -54,10 +54,10 @@ const Footer = () => {
 
       <div className='lg:flex md:justify-between items-center text-black py-10 px-5 max-w-7xl mx-auto'>
         <div className='flex justify-center gap-x-5 mb-5 lg:mb-0'>
-          <Link to='/' className='hover:text-greenCustom duration-75 text-center'>Pagos</Link>
-          <Link to='/' className='hover:text-greenCustom duration-75 text-center'>Envíos y devoluciones</Link>
-          <Link to='/' className='hover:text-greenCustom duration-75 text-center'>Recuperar cuenta</Link>
-          <Link to='/' className='hover:text-greenCustom duration-75 text-center'>Políticas de privacidad</Link>
+          <Link to='/' className='hover:text-primary duration-75 text-center'>Pagos</Link>
+          <Link to='/' className='hover:text-primary duration-75 text-center'>Envíos y devoluciones</Link>
+          <Link to='/' className='hover:text-primary duration-75 text-center'>Recuperar cuenta</Link>
+          <Link to='/' className='hover:text-primary duration-75 text-center'>Políticas de privacidad</Link>
         </div>
         <div className='flex justify-center items-center gap-x-5'>
           <img src={paypal} alt='' className='h-12' />

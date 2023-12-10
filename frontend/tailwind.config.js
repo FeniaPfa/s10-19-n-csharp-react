@@ -13,6 +13,7 @@ export default {
         parrafo: ['Roboto', 'sans-serif']
       },
       colors: {
+        primary: '#9FCB38',
         whiteBackgroundForm: '#f6f6f6',
         whiteBackgraundForm2: '#FFFFFF',
         greenCard: '#9FCB38',
@@ -22,7 +23,7 @@ export default {
         oranjeCustom: 'var(--oranje-custom)',
         blackCustom: 'var(--black-custom)',
         lightBrownCustom: 'var(--lightBrown-custom)',
-        greyCustom: 'var(--grey-custom)',
+        greyCustom: '#909090',
         whiteCustom: '#ffff',
         whiteCustom1: 'var(--white-custom1)',
         whiteCustom2: 'var(--white-custom2)',

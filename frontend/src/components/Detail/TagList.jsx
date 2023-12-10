@@ -2,7 +2,7 @@ import React from 'react'
 import { IoCheckmarkSharp, IoCloseSharp } from 'react-icons/io5'
 import { useSelector } from 'react-redux'
 
-const ListAtributes = () => {
+export const TagList = () => {
   const product = useSelector((state) => state.foods?.productByid)
 
   return (
@@ -31,7 +31,7 @@ const ListAtributes = () => {
                 <IoCloseSharp style={{ color: 'red', fontSize: '1.2rem' }} />
                 )
           }
-          Gluten
+          GlutenFree
         </li>
         <li className='itemListAtr flex justify-start items-center gap-1 text-marronCustom font-normal text-base'>
           {
@@ -43,11 +43,9 @@ const ListAtributes = () => {
                 <IoCloseSharp style={{ color: 'red', fontSize: '1.2rem' }} />
                 )
           }
-          Proteinas
+          Protein+
         </li>
       </ul>
     </div>
   )
 }
-
-export default ListAtributes
