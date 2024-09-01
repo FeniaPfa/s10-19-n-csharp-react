@@ -1,14 +1,36 @@
+import { useState } from 'react'
+import { useNavigate, Link } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
 import { useForm } from 'react-hook-form'
-import { Link } from 'react-router-dom'
+import { postLoginUser } from '../../features/auth/authSlice2'
 
 function Login () {
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+
   const { register, formState: { errors }, handleSubmit } = useForm({
     email: '',
     password: ''
   })
 
+  const [error, setError] = useState({})
+
   const onSubmit = (data) => {
-    console.log(data)
+    dispatch(postLoginUser(data))
+      .then(response => {
+        if (response.payload === 'Invalid password') {
+          setError({ password: 'Pasword nvalido' })
+        } else if (response.payload === 'User not found') {
+          setError({ noUser: 'Usuario no encontrado' })
+        } else if (response?.payload?.message === 'Authenticated user') {
+          setError({})
+          navigate('/home')
+        }
+      })
+      .catch(() => {
+        navigate('/home')
+        setError({})
+      })
   }
 
   const styledLabel = 'text-sm   mb-0.5 mt-2 text-gray-600'
@@ -46,16 +68,26 @@ function Login () {
 
               </div>
               <div className='flex mt-3'>
-                <input type='Submit' className='cursor-pointer w-4/5 bg-greenCard text-white mx-auto  px-2 py-2 rounded border border-solid border-gray-300  fouces:outline-none' value='Login' />
+                <button type='Submit' className='cursor-pointer w-4/5 bg-greenCard text-white mx-auto  px-2 py-2 rounded border border-solid border-gray-300  fouces:outline-none'>
+                  Login
+                </button>
               </div>
             </form>
             <div className='flex items-center  justify-center mt-5'>
               <div className=' flex justify-center items-center '>
                 <a className='cursor-pointer cursor-pinter text-xs text-gray-500 mx-3'>Forget Password?</a>
-                <a className='cursor-pointer text-xs text-gray-500 mx-3'>Don't have an account? <Link className='text-greenCard cursor-pointer' to='/register'>Sign up</Link> </a>
+                <p className=' text-xs text-gray-500 mx-3'>Don't have an account? <Link className='text-greenCard cursor-pointer' to='/register'>Sign up</Link> </p>
               </div>
 
             </div>
+            <section className='w-[100%] pt-4'>
+              {
+              error.password && <p className='font-parrafo text-center p-2 text-orange-500 font-normal text-normal'>{error.password}</p>
+              }
+              {
+              error.noUser && <p className='font-parrafo text-center p-2 text-orange-500 font-normal text-normal'>{error.noUser}</p>
+              }
+            </section>
           </div>
         </div>
         <div className='bg-greenCard w-3/6 h-full flex justify-center items-center'>

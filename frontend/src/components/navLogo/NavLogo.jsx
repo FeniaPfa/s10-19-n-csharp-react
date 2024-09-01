@@ -19,7 +19,7 @@ const NavLogo = () => {
 
   return (
     <button
-      className='logoContainer font-titulo text-[40px] text-greenCustom grid place-content-center'
+      className='logoContainer font-titulo text-[40px] text-primary grid place-content-center'
       onClick={handleClick}
     >
       <span className='capitalize font-titulo'>
