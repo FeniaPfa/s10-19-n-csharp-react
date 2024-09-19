@@ -28,7 +28,7 @@ const AppRoutes = () => {
       <Route path="/category/:id" element={<MealsByCategory />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/register" element={<Register />} />
-      {logged === true && <Route path="/profile" element={<ProfilePage />} />}
+      {logged && <Route path="/profile" element={<ProfilePage />} />}
 
       <Route path="/detalle/:id" element={<Detail />} />
 
