@@ -45,10 +45,6 @@ module.exports = {
         blackCustom: 'var(--black-custom)',
         lightBrownCustom: 'var(--lightBrown-custom)',
         greyCustom: '#909090',
-        whiteCustom: '#ffff',
-        whiteCustom1: 'var(--white-custom1)',
-        whiteCustom2: 'var(--white-custom2)',
-        whiteCustom3: 'var(--white-custom3)',
       },
       maxWidth: {
         rem14: '14rem',

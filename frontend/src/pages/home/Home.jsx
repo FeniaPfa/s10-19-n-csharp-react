@@ -1,13 +1,10 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { setActiveIndex } from '../../features/nav/navSlice';
-import SeeCategories from '../../components/SeeCategories/SeeCategories';
-
-// import ProductDay from '../../components/Sections/ProductDay'
-import { CardSlider } from '../../components/CardSlider/CardSlider';
-import Banner from '../../components/banner/Banner';
-
-import Features from '../../components/Sections/Features';
+import Banner from '../../components/Home/banner/Banner';
+import Features from '../../components/Home/Features';
+import { CategoryList } from '../../components/Home/CategoryList/CategoryList';
+import { CardSlider } from '../../components/Home/CardSlider/CardSlider';
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -20,11 +17,10 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="mt-[0] w-[100%] font-parrafo text-[2rem]">
+    <div className="w-full">
       <Banner />
       <Features />
-      <SeeCategories />
-      {/* <ProductDay /> */}
+      <CategoryList />
       <CardSlider />
     </div>
   );

@@ -19,7 +19,7 @@ const Categories = () => {
   return (
     <section
       ref={categoryRef}
-      className="containerRestaurants lg:mt-[130px] w-full my-11 min-h-[400px] flex flex-col justify-start items-center content-center bg-whiteCustom gap-6 border-2 border-r-emerald-200 "
+      className="containerRestaurants lg:mt-[130px] w-full my-11 min-h-[400px] flex flex-col justify-start items-center content-center bg-white gap-6 border-2 border-r-emerald-200 "
     >
       <section className="contentText px-[1rem] py-[1rem] flex flex-col gap-2 max-w-[1500px] ">
         <h2 className="font-title text-3xl font-bold text-marronCustom">

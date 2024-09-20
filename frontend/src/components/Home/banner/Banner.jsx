@@ -7,7 +7,6 @@ import {
 } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { IoChevronBackSharp, IoChevronForwardSharp } from 'react-icons/io5';
-import clsx from 'clsx';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -68,12 +67,7 @@ const Banner = () => {
           <SwiperSlide className={slide.backgroundColor}>
             <div className="w-full h-full flex lg:flex-row lg:items-center text-white">
               <section className="w-full h-1/2 lg:w-1/2 lg:h-[100%] flex flex-col justify-center p-[1.5rem] lg:p-[4rem] gap-3 sm:gap-5 lg:gap-6">
-                <h1
-                  className={clsx(
-                    'font-bold text-3xl lg:text-5xl font-title',
-                    index > 0 ? 'text-white' : 'text-secondary'
-                  )}
-                >
+                <h1 className="font-bold text-3xl lg:text-5xl font-title">
                   {slide.title}
                 </h1>
                 <h3 className="font-bold text-base lg:text-xl">

@@ -17,9 +17,7 @@ export default function UserInfo({ data }) {
             <p className="text-base">{data.email}</p>
           </div>
 
-          <p className="text-sm  text-greyCustom">
-            created at {data.createdAt}
-          </p>
+          <p className="text-sm  text-zinc-500">created at {data.createdAt}</p>
           <div className="flex w-5/6 flex-wrap text-base gap-4 mt-8 [&>*]:items-top">
             {
               // falta mapear un constructor para simplificar

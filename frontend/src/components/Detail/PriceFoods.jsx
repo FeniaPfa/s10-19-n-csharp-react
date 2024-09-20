@@ -83,7 +83,7 @@ const PriceFoods = ({ product }) => {
       </section>
       <button
         type="submit"
-        className="bg-greenCustom w-[100%] h-[40px] rounded-sm text-whiteCustom border-2 border-greenCustom font-title font-semibold text-base hover:bg-whiteCustom hover:border-lightBrownCustom hover:text-lightBrownCustom transition-all duration-200 ease-linear"
+        className="bg-greenCustom w-[100%] h-[40px] rounded-sm text-white border-2 border-greenCustom font-title font-semibold text-base hover:bg-white hover:border-lightBrownCustom hover:text-lightBrownCustom transition-all duration-200 ease-linear"
       >
         Añadir Al Carrito
       </button>
