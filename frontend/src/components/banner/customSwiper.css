@@ -1,12 +1,3 @@
-
-.swiper-button-prev:after, .swiper-rtl .swiper-button-next:after {
-  display: none;
-}
-
-.swiper-button-next:after, .swiper-rtl .swiper-button-prev:after {
-  display: none;
-}
-
 /* Estilos para los puntos de paginación */
 .swiper-pagination-bullet {
   width: 15px; /* Tamaño más grande */
@@ -21,9 +12,9 @@
   opacity: 1; /* Opacidad completa para el punto activo */
 }
 
-.swiper-button-prev{
-  left:2 ;
-} 
-.swiper-button-next{
+.swiper-button-prev {
+  left: 2;
+}
+.swiper-button-next {
   right: 2;
 }

@@ -98,7 +98,7 @@ function Login() {
               <div className="flex mt-3">
                 <button
                   type="Submit"
-                  className="cursor-pointer w-4/5 bg-greenCard text-white mx-auto  px-2 py-2 rounded border border-solid border-gray-300  fouces:outline-none"
+                  className="cursor-pointer w-4/5 bg-primary text-white mx-auto  px-2 py-2 rounded border border-solid border-gray-300  fouces:outline-none"
                 >
                   Login
                 </button>
@@ -111,10 +111,7 @@ function Login() {
                 </a>
                 <p className=" text-xs text-gray-500 mx-3">
                   Don't have an account?{' '}
-                  <Link
-                    className="text-greenCard cursor-pointer"
-                    to="/register"
-                  >
+                  <Link className="text-primary cursor-pointer" to="/register">
                     Sign up
                   </Link>{' '}
                 </p>
@@ -134,7 +131,7 @@ function Login() {
             </section>
           </div>
         </div>
-        <div className="bg-greenCard w-3/6 h-full flex justify-center items-center">
+        <div className="bg-primary w-3/6 h-full flex justify-center items-center">
           <figure className="flex justify-center items-center">
             <img
               className="w-3/5 h-3/5"

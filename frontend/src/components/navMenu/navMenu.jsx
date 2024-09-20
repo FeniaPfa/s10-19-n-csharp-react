@@ -9,7 +9,7 @@ const NavMenu = () => {
       <nav className="navMenu w-[170px] px-1 lg:px-auto lg:w-auto flex flex-col justify-center items-start gap-3 lg:flex lg:flex-row lg:justify-start lg:items-center lg:content-center lg:gap-5 text-[1.2rem]">
         <Link
           to="/"
-          className="capitalize font-titulo font-normal flex flex-col justify-start items-start content-start gap-2 relative"
+          className="capitalize font-title font-normal flex flex-col justify-start items-start content-start gap-2 relative"
         >
           home
           <span
@@ -20,7 +20,7 @@ const NavMenu = () => {
         </Link>
         <Link
           to="/restaurant"
-          className="capitalize font-titulo font-normal flex flex-col justify-start items-start content-start gap-2 relative"
+          className="capitalize font-title font-normal flex flex-col justify-start items-start content-start gap-2 relative"
         >
           Restaurantes
           <span
@@ -31,7 +31,7 @@ const NavMenu = () => {
         </Link>
         <Link
           to="/menu"
-          className="capitalize font-titulo font-normal flex flex-col justify-start items-start content-start gap-2 relative"
+          className="capitalize font-title font-normal flex flex-col justify-start items-start content-start gap-2 relative"
         >
           Menus
           <span
@@ -42,7 +42,7 @@ const NavMenu = () => {
         </Link>
         <Link
           to="/category"
-          className="capitalize font-titulo font-normal flex flex-col justify-start items-start content-start gap-2 relative"
+          className="capitalize font-title font-normal flex flex-col justify-start items-start content-start gap-2 relative"
         >
           Categorias
           <span
@@ -53,7 +53,7 @@ const NavMenu = () => {
         </Link>
         <Link
           to="/contact"
-          className="capitalize font-titulo font-normal flex flex-col justify-start items-start content-start gap-2 relative"
+          className="capitalize font-title font-normal flex flex-col justify-start items-start content-start gap-2 relative"
         >
           Contacto
           <span
