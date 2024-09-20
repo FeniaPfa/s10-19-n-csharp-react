@@ -23,7 +23,7 @@
 
   /* color */
   --marron-custom: #4d494a;
-  --green-custom: #9FCB38;
+  --green-custom: #9fcb38;
   --green-custom2: #9bc052;
   --oranje-custom: #d36802;
   --black-custom: #080808;
@@ -35,7 +35,6 @@
   --white-custom3: #ebe1be;
 }
 
-
 * {
   padding: 0;
   margin: 0;
@@ -44,15 +43,12 @@
 
 body {
   min-width: 320px;
-  /* min-height: 100vh; */
-  /* Temportal */
-  /* background-color: #ffffff; */
+  min-height: 100vh;
+  background-color: #ffffff;
 }
-
 
 @media (prefers-color-scheme: light) {
   :root {
     background-color: #ffffff;
   }
-
 }

@@ -1,17 +1,18 @@
-import './App.css'
-import Contain from './layout/Contain/Contain'
-import Main from './layout/Main/Main'
-import { ToastContainer } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
+/* eslint-disable react/react-in-jsx-scope */
+import './App.css';
+import Contain from './layout/Contain/Contain';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Routes from './layout/Main/Routes';
 
-function App () {
+function App() {
   return (
     <>
       <Contain>
-        <Main />
+        <Routes />
       </Contain>
       <ToastContainer
-        position='top-right'
+        position="top-right"
         autoClose={5000}
         hideProgressBar={false}
         newestOnTop={false}
@@ -20,10 +21,10 @@ function App () {
         pauseOnFocusLoss
         draggable
         pauseOnHover
-        theme='light'
+        theme="light"
       />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -1,36 +1,29 @@
-import React, { useEffect } from 'react'
-import { useDispatch } from 'react-redux'
-import { setActiveIndex } from '../../features/nav/navSlice'
-import SeeCategories from '../../components/SeeCategories/SeeCategories'
-
-// import ProductDay from '../../components/Sections/ProductDay'
-import { CardSlider } from '../../components/CardSlider/CardSlider'
-import Banner from '../../components/banner/Banner'
-
-// Import Swiper styles
-import 'swiper/css'
-import 'swiper/css/effect-fade'
-import 'swiper/css/navigation'
-import 'swiper/css/pagination'
-import Features from '../../components/Sections/Features'
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { setActiveIndex } from '../../features/nav/navSlice';
+import Banner from '../../components/Home/banner/Banner';
+import Features from '../../components/Home/Features';
+import { CategoryList } from '../../components/Home/CategoryList/CategoryList';
+import { CardSlider } from '../../components/Home/CardSlider/CardSlider';
 
 const Home = () => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(setActiveIndex('home'))
-    return () => { setActiveIndex(null) }
-  }, [])
+    dispatch(setActiveIndex('home'));
+    return () => {
+      setActiveIndex(null);
+    };
+  }, []);
 
   return (
-    <div className='mt-[0] w-[100%] font-parrafo text-[2rem]'>
+    <div className="w-full">
       <Banner />
       <Features />
-      <SeeCategories />
-      {/* <ProductDay /> */}
+      <CategoryList />
       <CardSlider />
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

@@ -1,74 +1,94 @@
-import React, { useState } from 'react'
-import { useDispatch } from 'react-redux'
-import { addItemToCar } from '../../features/counter/carSlice'
-import { formatPrice } from '../../utils/formatPrice'
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addItemToCar } from '../../features/counter/carSlice';
+import { formatPrice } from '../../utils/formatPrice';
 
 const PriceFoods = ({ product }) => {
   // const product = useSelector((state) => state.foods?.productByid)
   // const count = useSelector((state) => state.counter.value)
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
-  const [quantity, setQuantity] = useState(1)
+  const [quantity, setQuantity] = useState(1);
 
   const handleIncrement = (e) => {
-    e.preventDefault()
-    e.stopPropagation()
+    e.preventDefault();
+    e.stopPropagation();
     if (quantity < 10) {
-      setQuantity(quantity + 1)
+      setQuantity(quantity + 1);
     }
-  }
+  };
 
   const handleDecrement = (e) => {
-    e.preventDefault()
-    e.stopPropagation()
+    e.preventDefault();
+    e.stopPropagation();
     if (quantity > 1) {
-      setQuantity(quantity - 1)
+      setQuantity(quantity - 1);
     }
-  }
+  };
 
-  console.log('QUANTITY ->', quantity)
+  console.log('QUANTITY ->', quantity);
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-    e.stopPropagation()
-    dispatch(addItemToCar({ meal_id: product?.id, quantity, price: product?.price * quantity }))
-  }
+    e.preventDefault();
+    e.stopPropagation();
+    dispatch(
+      addItemToCar({
+        meal_id: product?.id,
+        quantity,
+        price: product?.price * quantity,
+      })
+    );
+  };
 
   return (
-    <form className='w-[100%] h-auto flex flex-col justify-center items-start gap-5' onSubmit={handleSubmit}>
-      <section className='botoneraPriceFood w-[100%] flex flex-row justify-between items-center content-center'>
+    <form
+      className="w-[100%] h-auto flex flex-col justify-center items-start gap-5"
+      onSubmit={handleSubmit}
+    >
+      <section className="botoneraPriceFood w-[100%] flex flex-row justify-between items-center content-center">
         {/* <Contador /> */}
-        <section className='containBotoneraSum flex flex-col justify-center items-start gap-1'>
-          <p className='font-titulo font-semibold text-md text-marronCustom '>Cantidad</p>
-          <div className='botoneraSum flex flex-row gap-1 text-greenCard border-2 rounded-md overflow-hidden'>
+        <section className="containBotoneraSum flex flex-col justify-center items-start gap-1">
+          <p className="font-title font-semibold text-md text-marronCustom ">
+            Cantidad
+          </p>
+          <div className="botoneraSum flex flex-row gap-1 text-primary border-2 rounded-md overflow-hidden">
             <button
-              aria-label='Increment value'
+              aria-label="Increment value"
               onClick={handleDecrement}
-              className='decrement w-[30px] h-[30px] grid place-content-center font-semibold text-md  text-marronCustom text-md border-r-2'
+              className="decrement w-[30px] h-[30px] grid place-content-center font-semibold text-md  text-marronCustom text-md border-r-2"
             >
               -
             </button>
-            <span className='font-parrafo font-semibold text-md text-marronCustom w-[30px] h-[30px] grid place-content-center'>{quantity}</span>
+            <span className="font-parrafo font-semibold text-md text-marronCustom w-[30px] h-[30px] grid place-content-center">
+              {quantity}
+            </span>
             <button
-              aria-label='Decrement value'
+              aria-label="Decrement value"
               onClick={handleIncrement}
-              className='increment w-[30px] h-[30px] grid place-content-center font-semibold text-md  text-marronCustom text-md border-l-2'
+              className="increment w-[30px] h-[30px] grid place-content-center font-semibold text-md  text-marronCustom text-md border-l-2"
             >
               +
             </button>
           </div>
         </section>
 
-        <section className='containPriceProduct flex flex-col justify-center items-start  gap-1'>
-          <h2 className='text-xl font-parrafo font-bold text-primary '>$ {formatPrice(product?.price * quantity)}</h2>
-          <p className='font-titulo font-normal text-sm text-marronCustom '>+12% IVA</p>
+        <section className="containPriceProduct flex flex-col justify-center items-start  gap-1">
+          <h2 className="text-xl font-parrafo font-bold text-primary ">
+            $ {formatPrice(product?.price * quantity)}
+          </h2>
+          <p className="font-title font-normal text-sm text-marronCustom ">
+            +12% IVA
+          </p>
         </section>
-
       </section>
-      <button type='submit' className='bg-greenCustom w-[100%] h-[40px] rounded-sm text-whiteCustom border-2 border-greenCustom font-titulo font-semibold text-base hover:bg-whiteCustom hover:border-lightBrownCustom hover:text-lightBrownCustom transition-all duration-200 ease-linear'>Añadir Al Carrito</button>
+      <button
+        type="submit"
+        className="bg-greenCustom w-[100%] h-[40px] rounded-sm text-white border-2 border-greenCustom font-title font-semibold text-base hover:bg-white hover:border-lightBrownCustom hover:text-lightBrownCustom transition-all duration-200 ease-linear"
+      >
+        Añadir Al Carrito
+      </button>
     </form>
+  );
+};
 
-  )
-}
-
-export default PriceFoods
+export default PriceFoods;
